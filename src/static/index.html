@@ -12,6 +12,130 @@
     <title>Gemini 2.0 FLASH多模态API客户端</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="css/style.css">
+
+
+        <!-- Add cyberpunk font -->
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+        <style>
+            :root {
+                --primary-color: #00ff9d;
+                --secondary-color: #0a1128;
+                --accent-color: #ff00ff;
+                --bg-gradient: linear-gradient(135deg, #0a1128 0%, #1a2a6c 100%);
+            }
+    
+            body {
+                background: var(--bg-gradient);
+                color: #fff;
+                font-family: 'Orbitron', sans-serif;
+                margin: 0;
+                padding: 20px;
+                min-height: 100vh;
+            }
+    
+            #app {
+                max-width: 1200px;
+                margin: 0 auto;
+                background: rgba(10, 17, 40, 0.8);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 2rem;
+                box-shadow: 0 0 20px rgba(0, 255, 157, 0.2);
+                border: 1px solid rgba(0, 255, 157, 0.1);
+            }
+    
+            .settings, button, input, select, textarea {
+                border: 2px solid var(--primary-color);
+                background: rgba(10, 17, 40, 0.6);
+                color: var(--primary-color);
+                border-radius: 8px;
+                padding: 10px;
+                transition: all 0.3s ease;
+            }
+    
+            button {
+                cursor: pointer;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                position: relative;
+                overflow: hidden;
+            }
+    
+            button:hover {
+                background: var(--primary-color);
+                color: var(--secondary-color);
+                box-shadow: 0 0 15px var(--primary-color);
+            }
+    
+            button::after {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+                transform: rotate(45deg);
+                animation: buttonGlow 2s linear infinite;
+            }
+    
+            @keyframes buttonGlow {
+                0% { transform: translateX(-100%) rotate(45deg); }
+                100% { transform: translateX(100%) rotate(45deg); }
+            }
+    
+            #video-container, #screen-container {
+                border: 2px solid var(--accent-color);
+                border-radius: 15px;
+                overflow: hidden;
+                margin-top: 20px;
+            }
+    
+            .audio-visualizers {
+                background: rgba(0, 255, 157, 0.05);
+                padding: 15px;
+                border-radius: 10px;
+                margin: 20px 0;
+            }
+    
+            #logs-container {
+                background: rgba(10, 17, 40, 0.8);
+                border: 1px solid var(--primary-color);
+                border-radius: 10px;
+                padding: 15px;
+                margin: 20px 0;
+                max-height: 300px;
+                overflow-y: auto;
+            }
+    
+            .setting-container {
+                margin: 10px 0;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+    
+            /* Scrollbar styling */
+            ::-webkit-scrollbar {
+                width: 8px;
+            }
+    
+            ::-webkit-scrollbar-track {
+                background: var(--secondary-color);
+            }
+    
+            ::-webkit-scrollbar-thumb {
+                background: var(--primary-color);
+                border-radius: 4px;
+            }
+    
+            /* Glowing effect for active elements */
+            input:focus, select:focus, textarea:focus {
+                box-shadow: 0 0 15px var(--primary-color);
+                outline: none;
+            }
+        </style>
+
 </head>
 <body>
     <div id="app">
