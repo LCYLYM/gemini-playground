@@ -13,14 +13,19 @@
     --spacing-md: 16px; 
     --spacing-lg: 24px;
     --primary-color-rgb: 0, 255, 157;
+    --bg-gradient: linear-gradient(135deg, #0a1128 0%, #1a2a6c 100%);
+}
+
+/* Reset & Base Styles */
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
 }
 
 body {
     font-family: 'Orbitron', sans-serif;
-    background: linear-gradient(135deg, #0a1128 0%, #1a2a6c 100%);
-    color: #fff;
-    justify-content: center;
-    align-items: center;
+    background: var(--bg-gradient);
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -559,6 +564,10 @@ input:focus, select:focus, textarea:focus {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    
     #app {
         padding: var(--spacing-sm);
         width: 96%;
@@ -640,4 +649,16 @@ input:focus, select:focus, textarea:focus {
 .fps-help {
     color: #666;
     font-size: 12px;
+}
+
+/* 添加中文字体支持 */
+@font-face {
+    font-family: 'Noto Sans SC';
+    font-display: swap;
+    src: local('Noto Sans SC'), url(https://fonts.gstatic.com/s/notosanssc/v20/k3kXo84MPvpLmixcA63oeALhL4iJ-Q7m.woff2) format('woff2');
+    unicode-range: U+4E00-9FFF;
+}
+
+body:lang(zh) {
+    font-family: 'Orbitron', 'Noto Sans SC', sans-serif;
 }
