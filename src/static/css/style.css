@@ -124,19 +124,40 @@ input:focus, select:focus, textarea:focus {
 
 #send-button, #mic-button {
     padding: 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #4285f4;
-    color: #fff;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    background: var(--surface-color);
+    color: var(--primary-color);
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
 }
 
 #send-button:hover, #mic-button:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    box-shadow: 0 0 15px var(--primary-color);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#mic-button.recording {
+    background: var(--danger-color);
+    border-color: var(--danger-color);
+    color: var(--text-color);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 255, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 0, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 255, 0);
+    }
 }
 
 #send-button:active, #mic-button:active {
@@ -452,6 +473,10 @@ input:focus, select:focus, textarea:focus {
     flex-direction: column;
     gap: 10px;
     margin: 10px 0;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
 }
 
 .visualizer-container {
@@ -476,13 +501,13 @@ input:focus, select:focus, textarea:focus {
 
 #input-audio-visualizer .audio-bar {
     height: 100%;
-    background-color: #34a853; /* Green for input audio */
+    background-color: var(--danger-color);
     width: 0%;
 }
 
 #audio-visualizer .audio-bar {
     height: 100%;
-    background-color: #4285f4; /* Blue for output audio */
+    background-color: var(--primary-color);
     width: 0%;
 }
 
